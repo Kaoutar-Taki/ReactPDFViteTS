@@ -149,6 +149,31 @@ const PDFFacture = () => {
                 <View style={styles.montExp}>
                     <Text style={styles.mots}>XXXXXX XXXXXX XXXXXX XXXXXX</Text>
                 </View>
+                {/* Table Section */}
+                <View style={styles.table}>
+                    <View style={styles.tableRow}>
+                        <Text style={[styles.tableHeader, { flex: 4 }]}>XXXXXX</Text>
+                        <Text style={styles.tableHeader}>XXXXXX</Text>
+                        <Text style={styles.tableHeader}>XXXXXX</Text>
+                        <Text style={styles.tableHeader}>XXXXXX</Text>
+                        <Text style={styles.tableHeader}>XXXXXX</Text>
+                        <Text style={styles.tableHeader}>XXXXXX</Text>
+                        <Text style={styles.tableHeader}>XXXXXX</Text>
+                        <Text style={[styles.tableHeader, { flex: 2 }]}>XXXXXX</Text>
+                    </View>
+                    {[...Array(50).keys()].map((rowIndex) => (
+                        <View key={rowIndex} style={styles.tableRow}>
+                            <Text style={[styles.tableCell, { flex: 4 }]}>Item {'=>'} {rowIndex + 1}</Text>
+                            <Text style={styles.tableCell}>--</Text>
+                            <Text style={styles.tableCell}>--</Text>
+                            <Text style={styles.tableCell}>--</Text>
+                            <Text style={styles.tableCell}>--</Text>
+                            <Text style={styles.tableCell}>--</Text>
+                            <Text style={styles.tableCell}>--</Text>
+                            <Text style={[styles.tableCell, { flex: 2 }]}>--</Text>
+                        </View>
+                    ))}
+                </View>
             </Page>
         </Document>
     );
