@@ -69,7 +69,7 @@ const PDFFile = () => {
                 <Text
                     style={styles.pageNumber}
                     render={({ pageNumber, totalPages }) =>
-                        `Page ${totalPages} of ${pageNumber}`
+                        `Page ${pageNumber} of ${totalPages}`
                     }
                     fixed
                 />
