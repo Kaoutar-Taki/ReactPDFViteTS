@@ -145,6 +145,10 @@ const PDFFacture = () => {
                         </View>
                     </View>
                 </View>
+                {/* currency */}
+                <View style={styles.montExp}>
+                    <Text style={styles.mots}>XXXXXX XXXXXX XXXXXX XXXXXX</Text>
+                </View>
             </Page>
         </Document>
     );
