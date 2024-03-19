@@ -121,6 +121,30 @@ const PDFFacture = () => {
                         <Text style={styles.headerText}>XXXXXX XXXXXX: XX-XX-XX XX:XX:XX</Text>
                     </View>
                 </View>
+                {/* Destination */}
+                <View style={styles.emeteur} >
+                    <View style={styles.twoItem}>
+                        <Text style={styles.headerText}>XXXXXX</Text>
+                        <View style={styles.headerSquare}>
+                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
+                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
+                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
+                            <Text style={styles.headerText}>XXXXXX : XXXXXX@XXXXXX.XXXXXX</Text>
+                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
+                            <Text style={styles.headerText}>XXXXXX : </Text>
+                        </View>
+                    </View>
+                    <View style={styles.twoItem}>
+                        <Text style={styles.headerText}>XXXXXX</Text>
+                        <View style={styles.headerSquare} >
+                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
+                            <Text style={styles.headerText}>XXXXXX : XXXXXX XXXXXX</Text>
+                            <Text style={styles.headerText}>XXXXXX :</Text>
+                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
+                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
+                        </View>
+                    </View>
+                </View>
             </Page>
         </Document>
     );
