@@ -174,6 +174,27 @@ const PDFFacture = () => {
                         </View>
                     ))}
                 </View>
+                {/* Terms of payment */}
+                <View style={styles.emeteur} >
+                    <View style={styles.twoItem}>
+                        <Text style={styles.headerText}>XXXXXX XXX XXXXXX:</Text>
+                        <View>
+                            <Text style={styles.headerText}>XXXXXX</Text>
+                            <Text style={styles.headerText}>XXXXXX</Text>
+                            <Text style={styles.headerText}>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</Text>
+                        </View>
+                    </View>
+                    <View style={styles.twoItem}>
+                        <Text style={styles.headerText}>XXXXXX</Text>
+                        <Text style={styles.headerText}>XXXXXX</Text>
+                        <Text style={styles.headerText}>XXXXXX</Text>
+                    </View>
+                    <View style={styles.twoItem}>
+                        <Text style={styles.headerText}>XXXXXX</Text>
+                        <Text style={styles.headerText}>XXXXXX</Text>
+                        <Text style={styles.headerText}>XXXXXX</Text>
+                    </View>
+                </View>
             </Page>
         </Document>
     );
