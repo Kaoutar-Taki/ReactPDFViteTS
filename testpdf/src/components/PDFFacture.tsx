@@ -195,6 +195,14 @@ const PDFFacture = () => {
                         <Text style={styles.headerText}>XXXXXX</Text>
                     </View>
                 </View>
+                {/* Page Number */}
+                <Text
+                    style={styles.pageNumber}
+                    render={({ pageNumber, totalPages }) =>
+                        `Page ${pageNumber} of ${totalPages}`
+                    }
+                    fixed
+                />
             </Page>
         </Document>
     );
