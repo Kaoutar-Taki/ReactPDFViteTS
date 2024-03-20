@@ -96,14 +96,35 @@ const styles = StyleSheet.create({
         fontWeight: "semibold",
         marginBottom: 5,
     },
+    twoItemSign: {
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
+        flex: 1,
+        gap: 10,
+    },
     sign: {
         display: 'flex',
         width: '100%',
         alignItems: 'stretch',
     },
-    signItem: {
+    signSquare: {
+        borderWidth: 1,
+        borderColor: '#000000',
+        height: 100,
+        width: "100%",
     },
-
+    textSIgn: {
+        fontSize: 8,
+        fontWeight: "semibold",
+        textAlign: 'center',
+        padding: 5,
+    },
+    ligneSign: {
+        borderBottom: 1,
+        borderColor: '#000000',
+        height: 30
+    }
 });
 
 const PDFFacture = () => {
@@ -161,7 +182,7 @@ const PDFFacture = () => {
                         <Text style={styles.tableHeader}>XXXXXX</Text>
                         <Text style={[styles.tableHeader, { flex: 2 }]}>XXXXXX</Text>
                     </View>
-                    {[...Array(50).keys()].map((rowIndex) => (
+                    {[...Array(40).keys()].map((rowIndex) => (
                         <View key={rowIndex} style={styles.tableRow}>
                             <Text style={[styles.tableCell, { flex: 4 }]}>Item {'=>'} {rowIndex + 1}</Text>
                             <Text style={styles.tableCell}>--</Text>
@@ -193,6 +214,20 @@ const PDFFacture = () => {
                         <Text style={styles.headerText}>XXXXXX</Text>
                         <Text style={styles.headerText}>XXXXXX</Text>
                         <Text style={styles.headerText}>XXXXXX</Text>
+                    </View>
+                </View>
+                {/* Signateur */}
+                <View style={styles.twoItemSign}>
+                    <View style={styles.signSquare}>
+                        <View style={styles.ligneSign}>
+                            <Text style={styles.textSIgn}>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</Text>
+                        </View>
+                    </View>
+                    <View style={styles.signSquare}>
+                        <View style={styles.ligneSign}>
+                            <Text style={styles.textSIgn}>XXXXXXXXXXXXXXXXXXX ,XXXXXX,XXXXXXXXXXXXXXXXXXXX</Text>
+                            <Text style={styles.textSIgn}>"XXXXXXXXXXXX"</Text>
+                        </View>
                     </View>
                 </View>
                 {/* Page Number */}
