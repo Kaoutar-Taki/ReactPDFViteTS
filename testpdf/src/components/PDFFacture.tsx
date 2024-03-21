@@ -1,243 +1,158 @@
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
-
-const styles = StyleSheet.create({
-    page: {
-        padding: 30,
-        backgroundColor: '#FFFFFF',
-    },
-    table: {
-        width: '100%',
-        borderStyle: 'solid',
-        borderRightColor: '#000000',
-        borderRight: 1,
-    },
-    tableRow: {
-        flexDirection: 'row',
-    },
-    tableCell: {
-        flex: 1,
-        fontSize: 10,
-        padding: 5,
-        borderLeftColor: '#000000',
-        borderLeft: 1,
-        borderBottomColor: '#000000',
-        borderBottom: 1,
-        borderBottomStyle: 'dashed'
-    },
-    tableHeader: {
-        flex: 1,
-        fontSize: 10,
-        fontWeight: 'bold',
-        padding: 5,
-        borderLeftColor: '#000000',
-        borderLeft: 1,
-        borderBottomColor: '#000000',
-        borderBottom: 1,
-        borderTopColor: '#000000',
-        borderTop: 1,
-        backgroundColor: '#f0f5f5',
-    },
-    headerText: {
-        fontSize: 8,
-        fontWeight: "semibold",
-        marginBottom: 5,
-        color: "#163269"
-    },
-    pageNumber: {
-        fontSize: 8,
-        textAlign: 'center',
-        margin: 10,
-        justifyContent: 'flex-end',
-    },
-    totalPages: {
-        fontSize: 8,
-        bottom: 30,
-        right: 30,
-    },
-    pageHeader: {
-        display: 'flex',
-        alignItems: 'center',
-        marginBottom: 20,
-        width: '100%',
-        fontStyle: 'bold'
-    },
-    headerTextBold: {
-        fontSize: 15,
-        marginBottom: 5,
-        fontWeight: 'bold',
-        color: "#800000"
-    },
-    emeteur: {
-        display: 'flex',
-        flexDirection: 'row',
-        gap: 10,
-        marginBottom: 10,
-    },
-    headerSquare: {
-        borderWidth: 1,
-        borderColor: '#000000',
-        padding: 10,
-        height: 100,
-        width: "100%",
-    },
-    twoItem: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        flex: 1,
-    },
-    montExp: {
-        display: 'flex',
-        width: '100%',
-        alignItems: 'flex-end',
-    },
-    mots: {
-        fontSize: 10,
-        fontWeight: "semibold",
-        marginBottom: 5,
-    },
-    twoItemSign: {
-        display: 'flex',
-        flexDirection: 'row',
-        width: '100%',
-        flex: 1,
-        gap: 10,
-    },
-    sign: {
-        display: 'flex',
-        width: '100%',
-        alignItems: 'stretch',
-    },
-    signSquare: {
-        borderWidth: 1,
-        borderColor: '#000000',
-        height: 100,
-        width: "100%",
-    },
-    textSIgn: {
-        fontSize: 8,
-        fontWeight: "semibold",
-        textAlign: 'center',
-        padding: 5,
-    },
-    ligneSign: {
-        borderBottom: 1,
-        borderColor: '#000000',
-        height: 30
-    }
-});
+import { Document, Page, Text, View } from "@react-pdf/renderer";
+import donnees from "../data/Donner";
+import pdfStyles from "../style/index";
 
 const PDFFacture = () => {
     return (
         <Document>
-            <Page size="A4" style={styles.page}>
+            <Page size="A4" style={pdfStyles.page}>
                 {/* Header Section */}
-                <View style={styles.pageHeader} fixed>
+                <View style={pdfStyles.pageHeader} fixed>
                     <View>
-                        <Text style={styles.headerText}>XXXXXX</Text>
-                        <Text style={styles.headerTextBold}>XXXXXX (XXXXXX)</Text>
-                        <Text style={styles.headerText}>XXXXXX. : XXXXXX-XXXXXX</Text>
-                        <Text style={styles.headerText}>XXXXXX XXXXXX : XXXXXX </Text>
-                        <Text style={styles.headerText}>XXXXXX XXXXXX :</Text>
-                        <Text style={styles.headerText}>XXXXXX XXXXXX: XX-XX-XX XX:XX:XX</Text>
+                        <Text style={pdfStyles.headerText}>XX-XX-XX</Text>
+                        <Text style={pdfStyles.headerTextBold}>
+                            Xxxx Xxxx (XXXXX)
+                        </Text>
+                        <Text style={pdfStyles.headerText}>xx. : xxxxxxxxxx</Text>
+                        <Text style={pdfStyles.headerText}>
+                            XXX XXXX : xx-xx-xxxx xx:xx xx+1
+                        </Text>
+                        <Text style={pdfStyles.headerText}>xxxx xxxxxx :</Text>
+                        <Text style={pdfStyles.headerText}>xxxx xx: xx-xx-xxxx xx:xx:xx</Text>
                     </View>
                 </View>
                 {/* Destination */}
-                <View style={styles.emeteur} >
-                    <View style={styles.twoItem}>
-                        <Text style={styles.headerText}>XXXXXX</Text>
-                        <View style={styles.headerSquare}>
-                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
-                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
-                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
-                            <Text style={styles.headerText}>XXXXXX : XXXXXX@XXXXXX.XXXXXX</Text>
-                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
-                            <Text style={styles.headerText}>XXXXXX : </Text>
+                <View style={pdfStyles.emeteur}>
+                    <View style={pdfStyles.twoItem}>
+                        <Text style={pdfStyles.headerText}>xxxxxx</Text>
+                        <View style={pdfStyles.headerSquare}>
+                            <Text style={pdfStyles.headerText}>
+                                XXXX : Xxxx Xxxx
+                            </Text>
+                            <Text style={pdfStyles.headerText}>xxxxxx : x.x</Text>
+                            <Text style={pdfStyles.headerText}>xxxx : xxxxxxxxxxxx</Text>
+                            <Text style={pdfStyles.headerText}>
+                                Xxxx : xxx.xxxxxx@xxx.xx
+                            </Text>
+                            <Text style={pdfStyles.headerText}>xxxx : xxxx</Text>
+                            <Text style={pdfStyles.headerText}>xxx : </Text>
                         </View>
                     </View>
-                    <View style={styles.twoItem}>
-                        <Text style={styles.headerText}>XXXXXX</Text>
-                        <View style={styles.headerSquare} >
-                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
-                            <Text style={styles.headerText}>XXXXXX : XXXXXX XXXXXX</Text>
-                            <Text style={styles.headerText}>XXXXXX :</Text>
-                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
-                            <Text style={styles.headerText}>XXXXXX : XXXXXX</Text>
+                    <View style={pdfStyles.twoItem}>
+                        <Text style={pdfStyles.headerText}>xxxx x</Text>
+                        <View style={pdfStyles.headerSquare}>
+                            <Text style={pdfStyles.headerText}>xxxx xxx : xxxx</Text>
+                            <Text style={pdfStyles.headerText}>xxxx : xxx xx xxxxxx</Text>
+                            <Text style={pdfStyles.headerText}>xxxx :</Text>
+                            <Text style={pdfStyles.headerText}>xxxxx : xxxxxxxxxxxxxxx</Text>
+                            <Text style={pdfStyles.headerText}>
+                                xxxxxxxxxxxxxx : xxxxxxxxx
+                            </Text>
                         </View>
                     </View>
                 </View>
                 {/* currency */}
-                <View style={styles.montExp}>
-                    <Text style={styles.mots}>XXXXXX XXXXXX XXXXXX XXXXXX</Text>
+                <View style={pdfStyles.montExp}>
+                    <Text style={pdfStyles.mots}>xxxxxx xxx x xxx</Text>
                 </View>
                 {/* Table Section */}
-                <View style={styles.table}>
-                    <View style={styles.tableRow}>
-                        <Text style={[styles.tableHeader, { flex: 4 }]}>XXXXXX</Text>
-                        <Text style={styles.tableHeader}>XXXXXX</Text>
-                        <Text style={styles.tableHeader}>XXXXXX</Text>
-                        <Text style={styles.tableHeader}>XXXXXX</Text>
-                        <Text style={styles.tableHeader}>XXXXXX</Text>
-                        <Text style={styles.tableHeader}>XXXXXX</Text>
-                        <Text style={styles.tableHeader}>XXXXXX</Text>
-                        <Text style={[styles.tableHeader, { flex: 2 }]}>XXXXXX</Text>
+                <View style={pdfStyles.table}>
+                    <View style={[pdfStyles.tableRow]}>
+                        <Text style={[pdfStyles.tableHeader, { flex: 7 }]}>xxxxxxxxx</Text>
+                        <Text style={pdfStyles.tableHeader}>xxxx</Text>
+                        <Text style={pdfStyles.tableHeader}>xxxxxx</Text>
+                        <Text style={pdfStyles.tableHeader}>xxx</Text>
+                        <Text style={pdfStyles.tableHeader}>xx</Text>
+                        <Text style={[pdfStyles.tableHeader, { flex: 2 }]}>xxxxx</Text>
+                        <Text style={[pdfStyles.tableHeader, { flex: 1 }]}>xx xx</Text>
+                        <Text style={[pdfStyles.tableHeader, { flex: 2 }, pdfStyles.lastTableCol]}>xxxx xx</Text>
                     </View>
-                    {[...Array(40).keys()].map((rowIndex) => (
-                        <View key={rowIndex} style={styles.tableRow}>
-                            <Text style={[styles.tableCell, { flex: 4 }]}>Item {'=>'} {rowIndex + 1}</Text>
-                            <Text style={styles.tableCell}>--</Text>
-                            <Text style={styles.tableCell}>--</Text>
-                            <Text style={styles.tableCell}>--</Text>
-                            <Text style={styles.tableCell}>--</Text>
-                            <Text style={styles.tableCell}>--</Text>
-                            <Text style={styles.tableCell}>--</Text>
-                            <Text style={[styles.tableCell, { flex: 2 }]}>--</Text>
+                    {donnees.map((item: any, index: number) => (
+                        <View key={index} style={[pdfStyles.tableRow, pdfStyles.tableRowCell, index === donnees.length - 1 ? pdfStyles.lastTableRow : {}]}>
+                            <Text style={[pdfStyles.tableCell, { flex: 7 }]}>
+                                {item.Désignation}
+                            </Text>
+                            <Text style={[pdfStyles.tableCell, pdfStyles.textRight]}>
+                                {item.Long || "--"}
+                            </Text>
+                            <Text style={[pdfStyles.tableCell, pdfStyles.textRight]}>
+                                {item.Larg || "--"}
+                            </Text>
+                            <Text style={[pdfStyles.tableCell, pdfStyles.textRight]}>
+                                {item.Ep || "--"}
+                            </Text>
+                            <Text style={[pdfStyles.tableCell, pdfStyles.textRight]}>
+                                {item.Pce || "--"}
+                            </Text>
+                            <Text style={[pdfStyles.tableCell, { flex: 2 }, pdfStyles.textRight]}>
+                                {item.Métrage || "--"}
+                            </Text>
+                            <Text style={[pdfStyles.tableCell, { flex: 1 }, pdfStyles.textRight]}>
+                                {item.PU || "--"}
+                            </Text>
+                            <Text style={[pdfStyles.tableCell, { flex: 2 }, pdfStyles.textRight, { borderRight: 0 }]}>
+                                {item["HT Total"] || "--"}
+                            </Text>
                         </View>
                     ))}
                 </View>
                 {/* Terms of payment */}
-                <View style={styles.emeteur} >
-                    <View style={styles.twoItem}>
-                        <Text style={styles.headerText}>XXXXXX XXX XXXXXX:</Text>
+                <View style={pdfStyles.emeteur}>
+                    <View style={pdfStyles.twoItem}>
+                        <Text style={pdfStyles.headerText}>xxxxxxxxxxxxxxxxxx:</Text>
                         <View>
-                            <Text style={styles.headerText}>XXXXXX</Text>
-                            <Text style={styles.headerText}>XXXXXX</Text>
-                            <Text style={styles.headerText}>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</Text>
+                            <Text style={pdfStyles.headerText}>
+                                xxxxxxxxxxxxxxxxx
+                            </Text>
+                            <Text style={pdfStyles.headerText}>
+                                xxxxxxxxxxxxxxx.
+                            </Text>
+                            <Text style={pdfStyles.headerText}>
+                                xx:xxxx xx xx , xxxxxxxxxxxxxxxxxx.
+                            </Text>
                         </View>
                     </View>
-                    <View style={styles.twoItem}>
-                        <Text style={styles.headerText}>XXXXXX</Text>
-                        <Text style={styles.headerText}>XXXXXX</Text>
-                        <Text style={styles.headerText}>XXXXXX</Text>
-                    </View>
-                    <View style={styles.twoItem}>
-                        <Text style={styles.headerText}>XXXXXX</Text>
-                        <Text style={styles.headerText}>XXXXXX</Text>
-                        <Text style={styles.headerText}>XXXXXX</Text>
+                    <View style={pdfStyles.total}>
+                        <View style={pdfStyles.twoItemTotal}>
+                            <Text style={pdfStyles.styleTextTotal}>xxxxx xxxx</Text>{" "}
+                            <Text style={pdfStyles.styleTextTotal}>61 241,25</Text>
+                        </View>
+                        <View style={pdfStyles.twoItemTotal}>
+                            <Text style={pdfStyles.styleTextTotal}>xxxxxx xxxx xx%</Text>
+                            <Text style={pdfStyles.styleTextTotal}>12 248,25</Text>
+                        </View>
+                        <View style={[pdfStyles.twoItemTotal, pdfStyles.background]}>
+                            <Text style={pdfStyles.styleTextTotal}>xxxxx xxxx</Text>
+                            <Text style={pdfStyles.styleTextTotal}>73 489,50</Text>
+                        </View>
                     </View>
                 </View>
                 {/* Signateur */}
-                <View style={styles.twoItemSign}>
-                    <View style={styles.signSquare}>
-                        <View style={styles.ligneSign}>
-                            <Text style={styles.textSIgn}>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</Text>
+                <View style={pdfStyles.twoItemSign}>
+                    <View style={pdfStyles.signSquare}>
+                        <View style={pdfStyles.ligneSign}>
+                            <Text style={pdfStyles.textSIgn}>
+                                xxxxx x xxxxxxxx xxx xxxxxxxxx xxxxxxxx
+                            </Text>
                         </View>
                     </View>
-                    <View style={styles.signSquare}>
-                        <View style={styles.ligneSign}>
-                            <Text style={styles.textSIgn}>XXXXXXXXXXXXXXXXXXX ,XXXXXX,XXXXXXXXXXXXXXXXXXXX</Text>
-                            <Text style={styles.textSIgn}>"XXXXXXXXXXXX"</Text>
+                    <View style={pdfStyles.signSquare}>
+                        <View style={pdfStyles.ligneSign}>
+                            <Text style={pdfStyles.textSIgn}>
+                                xxxxx xxxxxxxxxxx ,xxxx,xxxxxxxxx
+                            </Text>
+                            <Text style={pdfStyles.textSIgn}>"xxx xxx xxxx"</Text>
                         </View>
                     </View>
                 </View>
                 {/* Page Number */}
-                <Text
-                    style={styles.pageNumber}
+                {/* <Text
+                    style={pdfStyles.pageNumber}
                     render={({ pageNumber, totalPages }) =>
                         `Page ${pageNumber} of ${totalPages}`
                     }
                     fixed
-                />
+                /> */}
             </Page>
         </Document>
     );
